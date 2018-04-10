@@ -23,13 +23,12 @@ public class MyServlet extends HttpServlet{
 		
 		String url = "./Main/Information.jsp"; //처음 연결 페이지
 		
-		String path = this.getServletContext().getRealPath("WEB-INF/file/Abc1115.txt");
-		InfoDAO dao = new InfoDAO();
-		dao.insertInfo(path);
+		//정보 삽입
+		//String path = this.getServletContext().getRealPath("WEB-INF/file/Abc1115.txt");
+		//InfoDAO dao = new InfoDAO();
+		//dao.insertInfo(path);
 		
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 	}	
-	
-
 }

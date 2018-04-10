@@ -1,17 +1,22 @@
 CREATE TABLE project(
     cnumber NUMBER(10) PRIMARY KEY,
     email VARCHAR2(50),
-    koearn NUMBER(3),
-    english NUMBER(3),
-    math NUMBER(3),
-    science NUMBER(3),
-    history NUMBER(3),
-    score NUMBER(3),
-    tcode VARCHAR2(5),
+    koearn NUMBER(5),
+    english NUMBER(5),
+    math NUMBER(5),
+    science NUMBER(5),
+    history NUMBER(5),
+    score NUMBER(5),
+    tcode VARCHAR2(10),
     achievement VARCHAR2(5),
     regioncode VARCHAR2(5)
     );
    
 SELECT * FROM project;
-
+SELECT count(*) FROM PROJECT;
 DROP TABLE project;
+
+SELECT count(*) 
+FROM project 
+WHERE regioncode = 'B'
+AND (korean + );

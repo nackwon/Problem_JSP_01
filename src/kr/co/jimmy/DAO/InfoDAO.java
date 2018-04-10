@@ -34,7 +34,17 @@ public class InfoDAO {
 
 		return vo;
 	}
-
+	public int problem04() {
+		int count = 0;
+		ConnectionManager mgr = new ConnectionManager();
+		Connection con = mgr.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "SELECT regioncode FROM project";
+		
+		return count;
+	}
 	// 파일 정보 삽입
 	public void insertInfo(String path) {
 
@@ -44,10 +54,7 @@ public class InfoDAO {
 		ResultSet rs = null;
 		String line = ""; // 정보 한줄 씩 읽기
 		ArrayList<InfoVO> list = new ArrayList<InfoVO>(); // 읽은 정보 담을 list
-
-		if (con == null) {
-			System.out.println("연결실패");
-		}
+		int count= 0;
 		try {
 			// 파일 읽기
 			BufferedReader br = new BufferedReader(new FileReader(new File(path)));
@@ -83,7 +90,10 @@ public class InfoDAO {
 				pstmt.setString(10, vo.getAchievement());
 				pstmt.setString(11, vo.getRegioncode());
 				rs = pstmt.executeQuery();
+				count++;
+				System.out.println(count);
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

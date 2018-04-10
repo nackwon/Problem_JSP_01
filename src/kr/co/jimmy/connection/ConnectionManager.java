@@ -10,7 +10,7 @@ public class ConnectionManager {
 
 	public Connection getConnection() {
 		Connection con = null;
-		String url = "jdbc:oracle:thin:@localhost:1522:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe"; //내 컴퓨터랑 학원 컴퓨터랑 포트 번호 다름
 		String driver = "oracle.jdbc.OracleDriver";
 
 		try {
